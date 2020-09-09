@@ -1,0 +1,26 @@
+.home{
+  height: 100%;
+    .home_bar{
+        background-color: #d9d9d9;
+        height: 34px;
+        border-bottom:1px solid #c1bdbd;
+        .home_bar-left{
+            float: left;
+            text-align: center;
+            font-size: .16rem;
+            height: 100%;
+            width: 50%;
+            line-height: 34px;
+            border-right: 1px solid #c1bdbd;
+        }
+        .home_bar-right{
+            float: right;
+            text-align: center;
+            font-size: .16rem;
+            height: 100%;
+            width: 50%;
+            line-height: 34px;
+        }
+    }
+    
+}

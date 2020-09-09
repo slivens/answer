@@ -1,0 +1,9 @@
+{
+  "root": true,
+  "extends": [
+    "@sdp.nd/react"
+  ],
+  "rules":{
+    "no-unused-vars":"off"
+  }
+}
