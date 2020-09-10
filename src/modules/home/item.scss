@@ -1,55 +1,55 @@
 .question-item-container {
-    padding-top: 15px;
-    padding-bottom: 10px;
-    font-size: 16px;
-    border-bottom: solid 1px #c0c0c0;
-    cursor: pointer;
-  }
-  
-  .question-item-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 14px;
-    color: #666666;
-  }
-  
-  .question-item-footer .question-item-footer-left {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .question-item-header {
-    height: 16px;
-    font-family: 'Arial Negreta', 'Arial';
-    font-weight: 700;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    font-size: 14px;
-    color: #225599;
-    text-align: left;
-    margin-bottom: 5px;
-  }
-  
-  .question-item-description {
-    font-size: 14px;
-    line-height: 18px;
-    text-align: left;
-    font-family: 'Arial Negreta', 'Arial';
-    margin-bottom: 9px;
-  }
-  
-  .question-item-description .show-all-desc {
-    color: #225599;
-    font-family: 'Arial Normal', 'Arial';
-    font-size: 13px;
-    line-height: normal;
-    display: inline;
-    margin: 0 5px;
-    cursor: pointer;
-  }
-  
-  .question-item-timestamp {
-    margin: 0 8px;
-  }
+  padding-top: 15px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  border-bottom: solid 1px #c0c0c0;
+  cursor: pointer;
+}
+
+.question-item-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #666;
+}
+
+.question-item-footer .question-item-footer-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.question-item-header {
+  height: 18px;
+  font-family: 'Arial Negreta', 'Arial';
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 14px;
+  color: #259;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.question-item-description {
+  font-size: 14px;
+  line-height: 18px;
+  text-align: left;
+  font-family: 'Arial Negreta', 'Arial';
+  margin-bottom: 9px;
+}
+
+.question-item-description .show-all-desc {
+  color: #259;
+  font-family: 'Arial Normal', 'Arial';
+  font-size: 13px;
+  line-height: normal;
+  display: inline;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.question-item-timestamp {
+  margin: 0 8px;
+}

@@ -11,6 +11,8 @@
       }
     ],
     "transform-decorators-legacy",
-    ["import", { "libraryName": "fish", "libraryDirectory": "lib", "style": true }]
+    ["import", { "libraryName": "fish", "libraryDirectory": "lib", "style": true }],
+    ["import", { "libraryName": "antd-mobile", "style": "css" },"antd-mobile"]
+    
   ]
 }

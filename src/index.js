@@ -1,5 +1,6 @@
 import 'theme/styles/app.css'
 import 'theme/styles/app.scss'
+import 'antd-mobile/dist/antd-mobile.css'
 // IE9，10兼容性：https://reactjs.org/docs/javascript-environment-requirements.html
 // 下面三行必须置顶
 import 'core-js/fn/map'

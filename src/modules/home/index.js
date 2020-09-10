@@ -1,28 +1,28 @@
 import React, { Component } from 'react'
-import { Button, Row, Col, Spin, Tabs } from 'fish'
+import {Button, Row, Col, Spin} from 'fish'
 import QuestionItem from './QuestionItem'
 import './home.scss'
 import { getList, fresh } from '../actions'
 import { connect } from 'react-redux'
 import _ from 'lodash'
 import InfiniteScroll from 'react-infinite-scroller'
-const MYTAB = '我是帅哥' // 标识我的提问tab
-@connect(
-  state => ({ questions: state.questions }),
-  { getList, fresh }
-)
+const MYTAB = 'Me' // 标识我的提问tab
+ @connect(
+   state => ({ questions: state.questions }),
+   { getList, fresh }
+ )
 class Home extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      hasMore: true,
-      tab: 'tab1',
-      loading: true
-    }
-  }
-  componentDidMount() {
-    this.props.getList()
-  }
+   constructor(props) {
+     super(props)
+     this.state = {
+       hasMore: true,
+       tab: 'tab1',
+       loading: true
+     }
+   }
+   componentDidMount() {
+     this.props.getList()
+   }
   renderItems = items => {
     const newitems = _.orderBy(items, 'timestamp', 'desc')
     return newitems
@@ -67,7 +67,7 @@ class Home extends Component {
               答!
             </Col>
             <Col>
-              <Button type="primary">提问</Button>
+              <Button onClick={() => this.props.router.push('/add')} type="primary">提问</Button>
             </Col>
           </Row>
         </header>
@@ -93,7 +93,7 @@ class Home extends Component {
               loadMore={this.loadMore}
               hasMore={this.state.hasMore}
               loader={
-                <div>
+                <div key={new Date().getTime()}>
                   <Spin
                     style={{ left: '50%', transform: ' translateX(-50%)' }}
                   />
@@ -123,6 +123,6 @@ class Home extends Component {
       </div>
     )
   }
-}
+ }
 
 export default Home
