@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { Icon } from 'fish'
 import _ from 'lodash'
+import {timesFormat} from '../../utils'
 class AnswerItem extends Component {
   constructor(props) {
     super(props)
     this.state = {}
   }
-  renderTimestamp = items => {
-    const newitems = _.orderBy(items, 'timestamp', 'desc')
-    return newitems
-  };
+  renderTimestamp=(timestamp) => {
+    return timesFormat(timestamp / 1000)
+  }
   renderCount = count => {
     return count > 999 ? '999+' : count
   };

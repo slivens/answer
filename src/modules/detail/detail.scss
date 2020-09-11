@@ -1,14 +1,57 @@
+@mixin clearfix {
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
 .detail {
+  header {
+    position: relative;
+    padding: 0 10px;
+
+    @include clearfix;
+
+    .header_left {
+      cursor: pointer;
+      line-height: 44px;
+      float: left;
+      font-size: 24px;
+      color: #fff;
+      font-weight: 400;
+    }
+
+    .header_title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      line-height: 44px;
+      font-size: 24px;
+      color: #fff;
+      font-weight: 400;
+    }
+
+    .header_right {
+      line-height: 44px;
+      float: right;
+    }
+  }
+
   .detail_content {
     padding: 0 10px;
     height: calc(100vh - 44px);
     overflow: auto;
   }
+
   .question-detail-container {
     margin-top: 42px;
     padding: 0 11.5px;
     overflow-y: scroll;
   }
+
   .question-detail-foolter {
     display: flex;
     justify-content: center;
@@ -19,29 +62,39 @@
     font-style: normal;
     font-size: 13px;
   }
+
   .question-detail-foolter .load-more {
     color: #169bd5;
     cursor: pointer;
   }
+
   .answer-item-container {
     padding-bottom: 10px;
     font-size: 16px;
     border-bottom: solid 1px #c0c0c0;
     cursor: pointer;
   }
+
   .answer-item-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @include clearfix;
     font-size: 14px;
     color: #666;
     margin-top: 10px;
     margin-bottom: 9px;
   }
+
   .answer-item-header .answer-item-header-left {
-    display: flex;
-    flex-direction: row;
+    float: left;
+
+    div {
+      display: inline-block;
+    }
   }
+
+  .answer-item-header .answer-item-answer-right {
+    float: right;
+  }
+
   .answer-item-description {
     font-size: 14px;
     line-height: 18px;
@@ -49,19 +102,18 @@
     font-family: 'Arial Negreta', 'Arial';
     margin-bottom: 5px;
   }
+
   .answer-item-timestamp {
     margin: 0 8px;
   }
-  .answer-item-answer-right {
-    display: flex;
-    flex-direction: row;
-  }
+
   .answer-item-answer-right .answer-item-count {
-    display: flex;
-    flex-direction: row;
+    display: inline-block;
     margin-left: 10px;
   }
+
   .answer-item-answer-right .answer-item-count-text {
+    display: inline-block;
     min-width: 40px;
   }
 }

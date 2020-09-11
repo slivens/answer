@@ -1,3 +1,13 @@
+@mixin clearfix {
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
 .question-item-container {
   padding-top: 15px;
   padding-bottom: 10px;
@@ -7,16 +17,22 @@
 }
 
 .question-item-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   font-size: 14px;
   color: #666;
+
+  @include clearfix;
 }
 
 .question-item-footer .question-item-footer-left {
-  display: flex;
-  flex-direction: row;
+  float: left;
+
+  div {
+    display: inline-block;
+  }
+}
+
+.question-item-footer .question-item-footer-right {
+  float: right;
 }
 
 .question-item-header {

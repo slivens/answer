@@ -93,27 +93,20 @@ class AddQuestion extends Component {
         }
       }
       return (
-        <div className="add-question-container">
+        <div className="add">
           <header style={{ height: '44px', background: '#0066FF' }}>
-            <Row
-              style={{ height: '100%', padding: '0 10px' }}
-              type="flex"
-              justify="space-between"
-              align="middle"
+            <div
+              className="header_left"
+              onClick={() => this.props.router.push('/')}
             >
-              <Col
-                onClick={() => this.props.router.push('/')}
-                style={{ fontSize: '24px', color: '#fff', fontWeight: 400 }}
-              >
-                <Icon type="left" />
-              </Col>
-              <Col style={{ fontSize: '24px', color: '#fff', fontWeight: 400 }}>
-              发布问题
-              </Col>
-              <Col>
-                <Button onClick={this.handleSubmit} type="primary">提交</Button>
-              </Col>
-            </Row>
+              <Icon type="left" />
+            </div>
+            <div className="header_title">发布问题</div>
+            <div className="header_right">
+              <Button onClick={this.handleSubmit} type="primary">
+                提交
+              </Button>
+            </div>
           </header>
 
           <Form
@@ -128,38 +121,59 @@ class AddQuestion extends Component {
                   {
                     required: true,
                     message: '标题不能为空'
-                  }, {
-                    max: 50, message: '标题为50字以内的中文、英文或数字'
-                  }, {
+                  },
+                  {
+                    max: 50,
+                    message: '标题为50字以内的中文、英文或数字'
+                  },
+                  {
                     validator: this.checkTitle
                   }
                 ]
               })(<Input placeholder="请输入标题" />)}
             </Form.Item>
-            <Form.Item label="描述：（200字以内）" >
+            <Form.Item label="描述：（200字以内）">
               {getFieldDecorator('description', {
                 rules: [
                   {
                     required: true,
                     message: '问题描述不能为空'
-                  }, {
-                    max: 200, message: '描述内容的字数为200字'
-                  }, {
+                  },
+                  {
+                    max: 200,
+                    message: '描述内容的字数为200字'
+                  },
+                  {
                     validator: this.checkDescription
                   }
                 ]
-              })(<TextArea
-                style={{ height: '150px' }}
-                placeholder="请输入问题描述"
-                maxLength={200}
-                showCounter={(curNum, total) => {
-                  return (
-                    <div className="fish-input-maxnum-wrapper">
-                    已输入{curNum}字,总共{total}字
-                    </div>
-                  )
-                }}
-              />)}
+              })(
+                <TextArea
+                  style={{ height: '150px' }}
+                  placeholder="请输入问题描述"
+                  maxLength={200}
+                  showCounter={(curNum, total) => {
+                    return (
+                      <div className="fish-input-maxnum-wrapper">
+                        已输入{curNum}字,总共{total}字
+                      </div>
+                    )
+                  }}
+                />
+              )}
+            </Form.Item>
+            <Form.Item >
+              <div className="add_btn-grounp">
+                <Button onClick={this.handleSubmit} type="primary">
+                提交
+                </Button>
+                <Button
+                  style={{ marginLeft: 10 }}
+                  onClick={() => this.props.router.push('/')}
+                >
+                取消
+                </Button>
+              </div>
             </Form.Item>
           </Form>
         </div>

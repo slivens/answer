@@ -57,19 +57,8 @@ class Home extends Component {
     return (
       <div className="home">
         <header style={{ height: '44px', background: '#0066FF' }}>
-          <Row
-            style={{ height: '100%', padding: '0 10px' }}
-            type="flex"
-            justify="space-between"
-            align="middle"
-          >
-            <Col style={{ fontSize: '24px', color: '#fff', fontWeight: 400 }}>
-              答!
-            </Col>
-            <Col>
-              <Button onClick={() => this.props.router.push('/add')} type="primary">提问</Button>
-            </Col>
-          </Row>
+          <div className="header_left">答!</div>
+          <div className="header_right"><Button onClick={() => this.props.router.push('/add')} type="primary">提问</Button></div>
         </header>
         <div className="home_bar">
           <div key="tab1" onClick={this.goHome} className="home_bar-left">首页</div>

@@ -1,10 +1,42 @@
+@mixin clearfix {
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
 .home {
   height: 100%;
+
+  header {
+    position: relative;
+    padding: 0 10px;
+
+    @include clearfix;
+
+    .header_left {
+      line-height: 44px;
+      float: left;
+      font-size: 24px;
+      color: #fff;
+      font-weight: 400;
+    }
+
+    .header_right {
+      line-height: 44px;
+      float: right;
+    }
+  }
+
   .home_bar {
     background-color: #d9d9d9;
     height: 34px;
     border-bottom: 1px solid #c1bdbd;
     cursor: pointer;
+
     .home_bar-left {
       float: left;
       text-align: center;
@@ -14,6 +46,7 @@
       line-height: 34px;
       border-right: 1px solid #c1bdbd;
     }
+
     .home_bar-right {
       float: right;
       text-align: center;
@@ -24,12 +57,14 @@
     }
   }
 }
+
 .fish-tabs-tab {
   width: 50vw;
   // border-right: none !important;
   margin: 0 !important;
   text-align: center;
 }
+
 .fish-tabs-bar {
   margin: 0;
 }
